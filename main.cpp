@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    //QResource::registerResource("res.qrc");
 
     QImage img(":/2.bmp");
 
