@@ -89,5 +89,25 @@ int main(int argc, char *argv[])
 
    qWarning() << QString::number(d[f.x][f.y]);
 
+   std::vector<top> path;
+           int x = f.x, y = f.y;
+           path.push_back(f);
+           while(x != s.x || y != s.y)
+           {
+               top v = p[x][y];
+               x = v.x;
+               y = v.y;
+               path.push_back(v);
+
+           }
+
+           while(!path.empty())
+           {
+               img.setPixel(path.back().y, path.back().x, qRgb(255, 0, 0));
+               path.pop_back();
+           }
+
+    img.save("/home/vladius/Labirint/new.png");
+    qWarning() << 0;
     return a.exec();
 }
